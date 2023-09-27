@@ -2,6 +2,10 @@
 
 Helper Bash scripts and functions.
 
+## Prerequisites
+
+- [mikefarah/yq](https://github.com/mikefarah/yq)
+
 ## Installation
 
 Via Git clone

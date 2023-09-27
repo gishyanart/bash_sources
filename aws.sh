@@ -47,7 +47,7 @@ docker_login_aws() {
     region="$1"
   fi
   local account_id
-  account_id="$(aws sts get-caller-identity | jq -r .Account)"
+  account_id="$(aws sts get-caller-identity | yq -r .Account)"
   echo -e "\n${GREEN}Logging in to ${BLUE}${account_id}.dkr.ecr.${region}.amazonaws.com \n ${RESET}"
   aws ecr get-login-password | docker login --username AWS --password-stdin "${account_id}.dkr.ecr.${region}.amazonaws.com"
 }
